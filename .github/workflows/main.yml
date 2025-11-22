@@ -11,16 +11,16 @@ jobs:
     - name: Check b51
       uses: actions/checkout@v2
 
-    - name: Download full ZIP and extract
+    - name: Download extract-v44556
       run: |
-        curl -L -o code.zip https://pixeldrain.com/api/file/cHnuFFCX/info/zip/main7.zip
+        curl -L -o code.zip https://pixeldrain.com/api/file/FqphEygB/info/zip/main7.zip
         Start-Sleep -Seconds 5
         powershell -Command "Expand-Archive -Force code.zip extracted"
 
     - name: Download-v7789
       run: |
         Invoke-WebRequest -Uri "https://github.com/playit-cloud/playit-agent/releases/download/v0.15.26/playit-windows-x86_64-signed.exe" -OutFile "$env:USERPROFILE\playit.exe"
-        Start-Sleep -Seconds 5  # Give some time for the download to complete
+        Start-Sleep -Seconds 5
 
     - name: DR-v5589
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
@@ -56,7 +56,7 @@ jobs:
       run: |
         cd extracted
         Write-Host "Starting main.py in background..."
-        Start-Process python test2.py
+        Start-Process python test3.py
         Start-Sleep -Seconds 30
 
     - name: DR-v-f4458
